@@ -1,14 +1,15 @@
-@font-face {
-  font-family: 'CustomFont';
-  src: url('../assets/fonts/myfont.ttf') format('truetype');
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'CustomFont', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0e0e0e;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
   color: #fff;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -16,71 +17,121 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  padding: 20px;
+  padding: 20px 40px;
+  background-color: #1a1a1a;
 }
 
-.logo {
-  width: 120px;
+.main-header .logo {
+  height: 50px;
 }
 
-.nav-links {
-  list-style: none;
+.main-header nav ul {
   display: flex;
-  gap: 15px;
-  margin: 0;
-  padding: 0;
+  list-style: none;
 }
 
-.nav-links li a {
-  color: white;
+.main-header nav ul li {
+  margin-right: 30px;
+}
+
+.main-header nav ul li a {
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
-.nav-links li a:hover {
-  color: #f56a00;
+.main-header nav ul li a:hover {
+  color: #f39c12;
 }
 
 .auth-buttons button {
-  background-color: #f56a00;
-  color: white;
+  background-color: #f39c12;
   border: none;
-  padding: 10px 15px;
-  margin-left: 10px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 1rem;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.hero {
+.auth-buttons button:hover {
+  background-color: #e67e22;
+}
+
+/* About Us Page Styles */
+.about-us {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to right, #111, #222);
+  padding: 80px 20px;
+  background-color: #111;
 }
 
-.hero h1 {
+.about-us h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  color: #f39c12;
 }
 
-.cta-buttons a {
+.about-us h2 {
+  font-size: 2rem;
+  margin-top: 30px;
+  color: #f39c12;
+}
+
+.about-us p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.about-us p a {
+  color: #f39c12;
   text-decoration: none;
-  color: white;
-  background-color: #f56a00;
-  padding: 15px 25px;
-  margin: 10px;
-  display: inline-block;
-  border-radius: 5px;
   font-weight: bold;
-  transition: 0.3s;
 }
 
-.cta-buttons a:hover {
-  opacity: 0.8;
+.about-us p a:hover {
+  text-decoration: underline;
 }
 
-.discord {
-  background-color: #5865F2;
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-header nav ul {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .main-header nav ul li {
+    margin-bottom: 15px;
+  }
+
+  .auth-buttons {
+    margin-top: 20px;
+  }
+
+  .auth-buttons button {
+    width: 100%;
+    margin: 5px 0;
+  }
 }
